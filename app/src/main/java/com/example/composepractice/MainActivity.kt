@@ -16,10 +16,21 @@ import com.example.composepractice.ui.theme.ComposePracticeTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
 
+        setContent {
+            sayTemp("Hello Oliver!!")
         }
     }
 }
 
+
+@Composable
+fun sayTemp(name: String){
+    Text(text = "Hello $name")
+}
+
+@Preview(showBackground = true, name = "Hello Msg", widthDp = 200, heightDp = 200)
+@Composable
+private fun previewFunction(){
+    sayTemp("Oliver")
+}
